@@ -12,3 +12,5 @@ export default function App() {
 
 // API Key: d3e123696f03f62391f72f8962a7794e
 
+// fetch('https://api.themoviedb.org/3/movie/550?api_key=d3e123696f03f62391f72f8962a7794e')
+
