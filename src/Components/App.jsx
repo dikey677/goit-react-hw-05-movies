@@ -1,10 +1,12 @@
 import Navigation from '../Components/Navigation'
+import FindForm from './FindForm'
 
 export default function App() {
   return (
-    <div className="App">
-      <header className="Header">
+    <div className="app">
+      <header className="header">
         <Navigation />
+        <FindForm />
       </header>
     </div>
   );
