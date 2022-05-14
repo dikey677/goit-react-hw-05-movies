@@ -1,5 +1,26 @@
 .home-list__item {
     text-align: left;
-    margin-bottom: 10px;
+    margin-bottom: 7px;
     letter-spacing: 0.08em;
+    color:#1897f2;
+    transition: all  250ms ease;
+
+    &:hover {
+        color: tomato;
+        transform: translateX(20px);
+    }
+}
+
+.home-list__title {
+    font-size: calc(7px + 2vmin);
+    text-decoration: none;
+    color: #1897f2;
+    transition: all 250ms ease;
+   
+
+    &:hover {
+        color: tomato;
+        font-size: calc(10px + 2vmin);
+        
+    }
 }
