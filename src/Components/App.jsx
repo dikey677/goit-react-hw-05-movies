@@ -1,5 +1,8 @@
-import Navigation from '../Components/Navigation'
+import Navigation from './Navigation'
 import FindForm from './FindForm'
+import HomeView from './HomeView'
+import MoviesView from './MoviesView'
+import { Route, Routes } from 'react-router-dom'
 
 export default function App() {
   return (
@@ -7,7 +10,15 @@ export default function App() {
       <header className="header">
         <Navigation />
         <FindForm />
+        
       </header>
+
+      <div className="content">
+          <Routes>
+            <Route path="/home" element={<HomeView />} exact />
+            <Route path="/movies" element={<MoviesView />} />
+          </Routes>
+      </div>
     </div>
   );
 }
