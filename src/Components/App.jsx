@@ -1,7 +1,8 @@
 import Navigation from './Navigation'
 import FindForm from './FindForm'
-import HomeView from './HomeView'
-import MoviesView from './MoviesView'
+import HomePage from './Views/HomePage'
+import MovieDetailsPage from './Views/MovieDetailsPage'
+import MoviesPage from './Views/MoviesPage'
 import { Route, Routes } from 'react-router-dom'
 
 export default function App() {
@@ -15,8 +16,9 @@ export default function App() {
 
       <div className="content">
           <Routes>
-            <Route path="/home" element={<HomeView />} exact />
-            <Route path="/movies" element={<MoviesView />} />
+            <Route path="/home" element={<HomePage />} exact />
+            <Route path="/home/:movieId" element={<MovieDetailsPage />} exact />
+            <Route path="/movies" element={<MoviesPage />} />
           </Routes>
       </div>
     </div>
