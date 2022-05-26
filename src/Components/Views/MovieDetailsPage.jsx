@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react"
 import MoviePageByID from '../Sevices/FetchAPIById'
-import {useParams} from 'react-router-dom'
+import { useParams, Link, Routes, Route, Outlet} from 'react-router-dom'
+import Cast from "./Cast";
+import Reviews from "./Reviews";
 
-export default function MoviPage() {
+export default function MoviePage() {
     const { movieId } = useParams();
     const [movie, setMovie] = useState(null);
-    // console.log(movieId)
+    // const match = useLocation();
+  
+    // console.log(match.pathname)
 
     useEffect(() => {
         MoviePageByID.fetchAPIById(movieId)
@@ -21,30 +25,48 @@ export default function MoviPage() {
 
     return (
         <>
-            {movie && 
-                <div className="movie-page">
-                    <button type="button" className="movie-page__button">Go back</button>
+            {movie &&
+                <div className="movie">
+                    <div className="movie-page">
+                        <button type="button" className="movie-page__button">Go back</button>
 
-                    <img className="movie-page__img" src={movie.poster_path && `https://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt={movie.title}/>
-                    <ul className="movie-page__list">
-                        <li className="movie-page__item">
-                            <h1 className="movie-page__title">{movie.original_title} ({movie.release_date})</h1>
-                            <p className="movie-page__content">User score: {Math.floor(movie.vote_average * 10)}%</p>
-                        </li>
-                        <li className="movie-page__item">
-                            <h2 className="movie-page__title">Overview</h2>
-                            <p className="movie-page__content">{movie.overview}</p>
-                        </li>
-                        <li className="movie-page__item">
-                            <h3 className="movie-page__title">Genres</h3>
-                            <ul className="movie-page__genres-list"> {movie.genres.map(gen =>
-                                <li key={gen.id} className="movie-page__genres-item">
-                                    {gen.name}
-                            </li>)}
-                            </ul>
-                        </li>
-                    </ul>
-                </div> 
+                        <img className="movie-page__img" src={movie.poster_path && `https://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt={movie.title}/>
+                        <ul className="movie-page__list">
+                            <li className="movie-page__item">
+                                <h1 className="movie-page__title">{movie.original_title} ({movie.release_date})</h1>
+                                <p className="movie-page__content">User score: {Math.floor(movie.vote_average * 10)}%</p>
+                            </li>
+                            <li className="movie-page__item">
+                                <h2 className="movie-page__title">Overview</h2>
+                                <p className="movie-page__content">{movie.overview}</p>
+                            </li>
+                            <li className="movie-page__item">
+                                <h3 className="movie-page__title">Genres</h3>
+                                <ul className="movie-page__genres-list"> {movie.genres.map(gen =>
+                                    <li key={gen.id} className="movie-page__genres-item">
+                                        {gen.name}
+                                </li>)}
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <p className="movie-info">Additional information</p>
+                        
+                        <ul className="additional-list">
+                            <li><Link to="cast" className="cast-link">Cast</Link></li>
+                            <li><Link to="reviews" className="reviews-link">Reviews</Link></li>
+                        </ul>
+                        
+                        <Routes>
+                            <Route path="cast" element={<Cast id={movieId}/>} />
+                            <Route path="reviews" element={<Reviews id={movieId}/>} />
+                        </Routes>
+
+                        <Outlet/>
+                    </div>
+                </div>
             }
         </>
     )

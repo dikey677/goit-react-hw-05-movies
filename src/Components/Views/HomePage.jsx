@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import HomePageAPI from '../Sevices/FetchAPI'
-import {Link, useLocation} from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+
 
 export default function HomePage() {
     const [hits, setHits] = useState(null);
@@ -14,9 +15,6 @@ export default function HomePage() {
         .catch(error => {
             console.log(error)
         })
-
-        
-        
     }, [])
 
     return (

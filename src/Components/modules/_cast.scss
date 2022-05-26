@@ -1,0 +1,24 @@
+.cast {
+    // width: 400px;
+}
+
+.cast__list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+   }
+
+.cast__item {
+    margin: 10px;
+}
+
+.cast__item-name {
+    color: #1897f2;
+    font-size: calc(12px + 1vmin);
+}
+
+.cast__item-character {
+    
+    color: tomato;
+    font-size: calc(12px + 1vmin);
+}

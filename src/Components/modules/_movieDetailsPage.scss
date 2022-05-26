@@ -1,3 +1,9 @@
+.movie {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
 .movie-page {
     position: relative;
     display: flex;
@@ -6,7 +12,6 @@
     border-bottom: 1px solid #000;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
     height: 500px;
 }
 
@@ -38,14 +43,13 @@
 .movie-page__button {
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: -90px;
     width: 80px;
     height: 40px;
     border-radius: 10px;
     border-color: tomato;
     background-color: tomato;
     color: #fff;
-    z-index: 999;
     transition: all 150ms ease;
     
 }
@@ -55,4 +59,18 @@
     border-color: #1897f2;
     font-size: calc(9px + 0.34em);
     transform: scale(1.1);
+}
+
+.movie-page {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.movie-info {
+    color: tomato;
+    font-size: calc(16px + 1.5vmin);
+}
+
+.additional-list {
+    list-style-type: none;
 }
