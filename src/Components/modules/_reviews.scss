@@ -1,8 +1,26 @@
+.review {
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, .2) inset;
+    border-radius: 20px;
+}
+
 .review-list {
     list-style-type: none;
+    padding: 20px;
 }
 
 .review-list__content {
     text-align: justify;
     font-size: 17px;
+}
+
+.review-list__author {
+    font-size: calc(12px + 1vmin);
+    color: #1897f2;
+}
+
+.review-list__author--name {
+    font-size: calc(14px + 1vmin);
+    color: tomato;
 }

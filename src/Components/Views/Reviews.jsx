@@ -18,9 +18,9 @@ export default function Reviews({id}) {
         <div className="review">
             <ul className="review-list">
             {reviews && reviews.results.map(res => 
-                    <li key={reviews.id} className="review-list__item">
-                        <p className="review-list__name">Author name: {res.author}</p>
-                        <span className="review-list__content">{res.content}</span>
+                    <li key={res.id} className="review-list__item">
+                        <p className="review-list__name"><span className="review-list__author">Author name:</span> <span className="review-list__author--name">{res.author}</span></p>
+                        <p className="review-list__content">{res.content}</p>
                     </li>
                 )
             }

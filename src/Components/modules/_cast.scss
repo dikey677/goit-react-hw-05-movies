@@ -1,12 +1,19 @@
 .cast {
-    // width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    height: 580px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, .2) inset;
+    border-radius: 20px;
 }
 
 .cast__list {
     list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-   }
+    padding-left: 0;
+    width: 300px;
+}
 
 .cast__item {
     margin: 10px;
@@ -21,4 +28,8 @@
     
     color: tomato;
     font-size: calc(12px + 1vmin);
+}
+
+.cast__item-image {
+    border-radius: 15px;
 }

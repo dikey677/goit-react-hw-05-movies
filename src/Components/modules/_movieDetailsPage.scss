@@ -1,76 +1,85 @@
 .movie {
     display: flex;
     flex-direction: column;
+   
     margin: 0 auto;
-}
-
-.movie-page {
-    position: relative;
-    display: flex;
-    padding: 20px;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
-    justify-content: center;
-    align-items: center;
-    height: 500px;
-}
-
-.movie-page__title {
-    text-align: left;
-    color: #1897f2;
-}
-
-.movie-page__list, .movie-page__genres-list {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: first baseline;
-}
-
-.movie-page__content {
-    text-align: Justify;
-    width: 500px;
-}
-
-.movie-page__genres-list {
-    padding-left: 0;
-}
-
-.movie-page__genres-item {
-    text-align: left;
-}
-
-.movie-page__button {
-    position: absolute;
-    top: 10px;
-    right: -90px;
-    width: 80px;
-    height: 40px;
-    border-radius: 10px;
-    border-color: tomato;
-    background-color: tomato;
-    color: #fff;
-    transition: all 150ms ease;
+    width: 1000px;
     
+
+    &-page {
+        position: relative;
+        display: flex;
+        padding: 20px;
+        border: 1px solid #000;
+        border-radius: 15px;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 40px rgba(0, 0, 0, .2) inset;
+        border-radius: 20px;
+    }
+    
+    &-page__list {
+        height: 580px;
+    }
+
+    &-page__img {
+        border-radius: 15px;
+    }
+
+    &-page__title {
+        text-align: left;
+        color: #1897f2;
+    }
+
+    &-page__list,
+    &-page__genres-list {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &-page__content {
+        text-align: Justify;
+        width: 500px;
+    }
+
+    &-page__genres-list {
+        padding-left: 0;
+    }
+
+    &-page__genres-item {
+        text-align: left;
+    }
+
+    &-page__button {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 80px;
+        height: 40px;
+        border-radius: 10px;
+        border-color: tomato;
+        background-color: tomato;
+        color: #fff;
+        transition: all 150ms ease;
+    }
+
+    &-page__button:hover {
+        background-color: #1897f2;
+        border-color: #1897f2;
+        font-size: calc(9px + 0.34em);
+        transform: scale(1.1);
+    }
 }
 
-.movie-page__button:hover {
-    background-color: #1897f2;
-    border-color: #1897f2;
-    font-size: calc(9px + 0.34em);
-    transform: scale(1.1);
-}
 
-.movie-page {
-    padding-top: 70px;
-    padding-bottom: 70px;
-}
-
-.movie-info {
+.additional-info {
     color: tomato;
     font-size: calc(16px + 1.5vmin);
 }
 
 .additional-list {
     list-style-type: none;
+    
 }

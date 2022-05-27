@@ -51,8 +51,8 @@ export default function MoviePage() {
                         </ul>
                     </div>
                     
-                    <div>
-                        <p className="movie-info">Additional information</p>
+                    <div className="additional">
+                        <p className="additional-info">Additional information</p>
                         
                         <ul className="additional-list">
                             <li><Link to="cast" className="cast-link">Cast</Link></li>
