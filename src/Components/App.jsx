@@ -1,5 +1,4 @@
 import Navigation from './Navigation'
-import FindForm from './FindForm'
 import HomePage from './Views/HomePage'
 import MovieDetailsPage from './Views/MovieDetailsPage'
 import MoviesPage from './Views/MoviesPage'
@@ -10,7 +9,6 @@ export default function App() {
     <div className="app">
       <header className="header">
         <Navigation />
-        <FindForm />
         
       </header>
 
