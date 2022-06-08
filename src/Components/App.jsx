@@ -9,14 +9,14 @@ export default function App() {
     <div className="app">
       <header className="header">
         <Navigation />
-        
       </header>
 
       <div className="content">
           <Routes>
             <Route path="/home" element={<HomePage />} exact />
             <Route path="/home/:movieId/*" element={<MovieDetailsPage />} exact />
-            <Route path="/movies" element={<MoviesPage />} />
+            <Route path="/movies" element={<MoviesPage />} exact />
+            <Route path="/movies/:movieId/*" element={<MovieDetailsPage />} exact />
           </Routes>
       </div>
     </div>

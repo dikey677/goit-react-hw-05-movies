@@ -1,8 +1,8 @@
-export default function FindForm({ onClick, onChange }) { 
+export default function FindForm({ onChange, enterValue, onSubmit }) { 
     return (
-        <form className="form" onChange={onChange}>
-            <input type="text" placeholder="Enter the movie name" />
-            <button className="find-button" type="submit" onClick={onClick}>Find movie</button>
+        <form className="form" onSubmit={onSubmit}>
+            <input type="search" placeholder="Enter the movie name" value={enterValue} onChange={ evt => onChange(evt.target.value) }/>
+            <button className="find-button" type="submit">Find movie</button>
         </form>
     )
 }

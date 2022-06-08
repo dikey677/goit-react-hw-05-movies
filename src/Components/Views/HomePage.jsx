@@ -21,7 +21,7 @@ export default function HomePage() {
         <div>
             <h1 className="home-title">Tranding today</h1>
             <ul className="home-list">
-                {hits !== null && hits.map(hit =>
+                {hits && hits.map(hit =>
                     <li key={hit.id} className="home-list__item">
                         <Link to={`${match.pathname}/${hit.id}`} className="home-list__title">
                             {hit.title}

@@ -1,15 +1,17 @@
 import { useState, useEffect } from "react"
 import MoviePageByID from '../Sevices/FetchAPIById'
-import { useParams, Link, Routes, Route, Outlet} from 'react-router-dom'
+import { useNavigate, useParams, Link, Routes, Route, Outlet} from 'react-router-dom'
 import Cast from "./Cast";
 import Reviews from "./Reviews";
 
 export default function MoviePage() {
     const { movieId } = useParams();
     const [movie, setMovie] = useState(null);
+    const navigate = useNavigate();
     // const match = useLocation();
-  
-    // console.log(match.pathname)
+    console.log(movieId)
+
+    const goBack = () => navigate(-1)
 
     useEffect(() => {
         MoviePageByID.fetchAPIById(movieId)
@@ -28,7 +30,7 @@ export default function MoviePage() {
             {movie &&
                 <div className="movie">
                     <div className="movie-page">
-                        <button type="button" className="movie-page__button">Go back</button>
+                        <button type="button" className="movie-page__button" onClick={goBack}>Go back</button>
 
                         <img className="movie-page__img" src={movie.poster_path && `https://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt={movie.title}/>
                         <ul className="movie-page__list">
