@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense, lazy} from "react"
 import HomePageAPI from '../Sevices/FetchAPI'
 import { Link, useLocation } from 'react-router-dom'
+const Loader = lazy(()=>import('../Loader'))
 
 
 export default function HomePage() {
@@ -21,12 +22,14 @@ export default function HomePage() {
         <div>
             <h1 className="home-title">Tranding today</h1>
             <ul className="home-list">
-                {hits && hits.map(hit =>
-                    <li key={hit.id} className="home-list__item">
-                        <Link to={`${match.pathname}/${hit.id}`} className="home-list__title">
-                            {hit.title}
-                        </Link>
-                    </li>)}
+                <Suspense fallback={<Loader/>}>
+                    {hits && hits.map(hit =>
+                        <li key={hit.id} className="home-list__item">
+                            <Link to={`${match.pathname}/${hit.id}`} className="home-list__title">
+                                {hit.title}
+                            </Link>
+                        </li>)}
+                </Suspense>
             </ul>
         </div>
     )

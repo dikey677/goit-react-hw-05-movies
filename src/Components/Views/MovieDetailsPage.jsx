@@ -1,8 +1,13 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, lazy, Suspense } from "react"
 import MoviePageByID from '../Sevices/FetchAPIById'
-import { useNavigate, useParams, Link, Routes, Route, Outlet} from 'react-router-dom'
-import Cast from "./Cast";
-import Reviews from "./Reviews";
+import { useNavigate, useParams, Link, Routes, Route, Outlet } from 'react-router-dom'
+
+// import Cast from "./Cast";
+// import Reviews from "./Reviews";
+
+const Cast = lazy(() => import('./Cast'))
+const Reviews = lazy(() => import('./Reviews'))
+const Loader = lazy(()=>import('../Loader'))
 
 export default function MoviePage() {
     const { movieId } = useParams();
@@ -61,6 +66,7 @@ export default function MoviePage() {
                             <li><Link to="reviews" className="reviews-link">Reviews</Link></li>
                         </ul>
                         
+                        <Suspense fallback={<Loader/>}></Suspense>
                         <Routes>
                             <Route path="cast" element={<Cast id={movieId}/>} />
                             <Route path="reviews" element={<Reviews id={movieId}/>} />
